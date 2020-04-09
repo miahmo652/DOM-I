@@ -1,25 +1,3 @@
-let navtxt = ['Services', 'Product', 'Vision', 'Features', 'About', 'Contact']
-let navItems = document.querySelectorAll("a")
-navtxt.forEach((txts, i) => {
-    navItems[i].textContent = txts;
-});
-
-
-
-let head = document.querySelector("h1").textContent = "DOM Is Awesome";
-let buttons = document.querySelector("button").textContent = "Get Started";
-let images = document.querySelector("#cta-img").src = "img/header-img.png"
-
-let main = ['Features', 'About']
-let cont = document.querySelectorAll(".top-content h4")
-main.forEach((head, i) => {
-    cont[i].textContent = head;
-})
-let par = document.querySelectorAll(".top-content p")
-par.forEach((element) => {
-    element.textContent = "content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-
-})
 const siteContent = {
     "nav": {
         "nav-item-1": "Services",
@@ -62,3 +40,63 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const hfour = document.querySelectorAll('h4');
+const para = document.querySelectorAll('p');
+const links = document.querySelectorAll('a');
+const but = document.querySelector('button');
+const head = document.querySelector('h1');
+const midimg = document.getElementById('middle-img');
+const headimg = document.getElementById("cta-img");
+
+// navigation
+links[0].textContent = siteContent['nav']['nav-item-1'];
+links[1].textContent = siteContent['nav']['nav-item-2'];
+links[2].textContent = siteContent['nav']['nav-item-3'];
+links[3].textContent = siteContent['nav']['nav-item-4'];
+links[4].textContent = siteContent['nav']['nav-item-5'];
+links[5].textContent = siteContent['nav']['nav-item-6'];
+
+
+head.textContent = siteContent['cta']['h1'];
+head.innerHTML = "DOM<br> Is<br> Awesome";
+headimg.setAttribute('src', siteContent["cta"]["img-src"]);
+but.textContent = siteContent['cta']['button'];
+
+
+// HEADING 4
+hfour[0].textContent = siteContent["main-content"]["features-h4"];
+hfour[1].textContent = siteContent["main-content"]["about-h4"];
+hfour[2].textContent = siteContent["main-content"]["services-h4"];
+hfour[3].textContent = siteContent["main-content"]["product-h4"];
+hfour[4].textContent = siteContent["main-content"]["vision-h4"];
+hfour[5].textContent = siteContent["contact"]["contact-h4"];
+
+// MIDDLE IMAGE
+midimg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// PARAGRAPHS
+para[0].textContent = siteContent["main-content"]["features-content"];
+para[1].textContent = siteContent["main-content"]["about-content"];
+para[2].textContent = siteContent["main-content"]["services-content"];
+para[3].textContent = siteContent["main-content"]["product-content"];
+para[4].textContent = siteContent["main-content"]["vision-content"];
+para[5].innerHTML = "123 Way 456 Street<br> Somewhere, USA";
+para[6].textContent = siteContent["contact"]["phone"];
+para[7].textContent = siteContent["contact"]["email"];
+para[8].textContent = siteContent["footer"]["copyright"];
+
+// CHANGING COLORS
+
+links.forEach(function(variable) {
+    variable.style.color = "green"
+})
+let anchor = document.createElement("a");
+anchor.style.color = "green";
+let anchor2 = document.createElement("a");
+anchor2.style.color = "green";
+let navbar = document.querySelector("nav");
+anchor.textContent = "newelement";
+anchor2.textContent = "newelement2";
+navbar.append(anchor);
+navbar.prepend(anchor2);
